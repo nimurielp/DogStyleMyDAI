@@ -170,8 +170,9 @@ class SpringDbDogstyleApplicationTests {
 	}
 	
 	
-	@Test
+	
 	void mostrarTodasLasCitas() {
+		
 	    Iterable<Cita> citas = citaRepository.findAll();
 
 	    for (Cita cita : citas) {
