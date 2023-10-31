@@ -24,6 +24,11 @@ class SpringDbDogstyleApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("");
+		System.out.println("-----------------------------------------------");
+		System.out.println("|    PRUEBA MAPEADO BASE DE DATOS MyDAI       |");
+		System.out.println("-----------------------------------------------");
+		System.out.println("");
 		System.out.println("CREAMOS LOS USUARIOS:");
 		createUsuarios();
 		System.out.println("MOSTRAMOS LOS USUARIOS:");
