@@ -19,6 +19,7 @@ public class Usuario {
     private Long id;
     
     private String username;
+    private String password;
     private String nombre;
     private String telefono;
     private String email;
@@ -82,9 +83,17 @@ public class Usuario {
 		this.username = username;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(citas, email, id, nombre, telefono, username);
+		return Objects.hash(citas, email, id, nombre, password, telefono, username);
 	}
 
 	@Override
@@ -97,15 +106,17 @@ public class Usuario {
 			return false;
 		Usuario other = (Usuario) obj;
 		return Objects.equals(citas, other.citas) && Objects.equals(email, other.email) && Objects.equals(id, other.id)
-				&& Objects.equals(nombre, other.nombre) && Objects.equals(telefono, other.telefono)
-				&& Objects.equals(username, other.username);
+				&& Objects.equals(nombre, other.nombre) && Objects.equals(password, other.password)
+				&& Objects.equals(telefono, other.telefono) && Objects.equals(username, other.username);
 	}
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", username=" + username + ", nombre=" + nombre + ", telefono=" + telefono
-				+ ", email=" + email + ", citas=" + citas + "]";
+		return "Usuario [id=" + id + ", username=" + username + ", password=" + password + ", nombre=" + nombre
+				+ ", telefono=" + telefono + ", email=" + email + ", citas=" + citas + "]";
 	}
+
+	
 	
 	
 	

@@ -1,5 +1,7 @@
 package com.example.data;
 
+//import java.text.SimpleDateFormat;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -64,8 +66,8 @@ class SpringDbDogstyleApplicationTests {
 	    usuario1.setEmail("nico@example.com");
 
 	    Usuario usuario2 = new Usuario();
-	    usuario2.setNombre("Joaquín");
-	    usuario2.setEmail("joaquin@example.com");
+	    usuario2.setNombre("Marta");
+	    usuario2.setEmail("marta@example.com");
 
 	    // Guardar los usuarios en la base de datos
 	    usuario1 = usuarioRepository.save(usuario1);
@@ -126,28 +128,6 @@ class SpringDbDogstyleApplicationTests {
 	}
 	
 	
-	
-	void eliminarCitaPorHora() {
-	    Scanner scanner = new Scanner(System.in);
-
-	    System.out.print("Introduce la hora de la cita a eliminar (por ejemplo, 10:00): ");
-	    String horaAEliminar = scanner.nextLine();
-
-	    System.out.print("Introduce el ID del usuario: ");
-	    Long usuarioId = scanner.nextLong();
-
-	    Usuario usuario = usuarioRepository.findById(usuarioId).orElse(null);
-
-	    if (usuario != null) {
-	        citaRepository.deleteByHoraAndUsuario(horaAEliminar, usuario);
-	        System.out.println("Cita eliminada: Hora = " + horaAEliminar + ", Usuario ID = " + usuarioId);
-	    } else {
-	        System.out.println("Usuario no encontrado con ID " + usuarioId);
-	    }
-
-	    scanner.close();
-	}
-	
 	void eliminarUsuarioYSusCitas() {
 	    Scanner scanner = new Scanner(System.in);
 
@@ -168,8 +148,6 @@ class SpringDbDogstyleApplicationTests {
 	    scanner.close();
 	}
 	
-	
-	
 	void mostrarTodasLasCitas() {
 		
 	    Iterable<Cita> citas = citaRepository.findAll();
@@ -185,9 +163,6 @@ class SpringDbDogstyleApplicationTests {
 	        System.out.println("----------");
 	    }
 	}
-
-	
-	
 
 }
 
