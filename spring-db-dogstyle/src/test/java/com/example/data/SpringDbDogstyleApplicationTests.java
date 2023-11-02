@@ -29,7 +29,7 @@ class SpringDbDogstyleApplicationTests {
 		System.out.println("|    PRUEBA MAPEADO BASE DE DATOS MyDAI       |");
 		System.out.println("-----------------------------------------------");
 		System.out.println("");
-		System.out.println("CREAMOS LOS USUARIOS:");
+		System.out.println("CREAMOS LOS USUARIOS");
 		createUsuarios();
 		System.out.println("MOSTRAMOS LOS USUARIOS:");
 		System.out.println("-----------------------------------------------");
@@ -75,20 +75,20 @@ class SpringDbDogstyleApplicationTests {
 	    Cita cita1 = new Cita();
 	    cita1.setFecha(new Date());
 	    cita1.setHora("10:00");
-	    cita1.setLibre(true);
+	    cita1.setLibre(false);
 	    cita1.setUsuario(usuario1);
 
 	    Cita cita2 = new Cita();
 	    cita2.setFecha(new Date());
 	    cita2.setHora("11:00");
-	    cita2.setLibre(true);
+	    cita2.setLibre(false);
 	    cita2.setUsuario(usuario1);
 
 	    // Crear una cita para el usuario 2
 	    Cita cita3 = new Cita();
 	    cita3.setFecha(new Date());
 	    cita3.setHora("14:00");
-	    cita3.setLibre(true);
+	    cita3.setLibre(false);
 	    cita3.setUsuario(usuario2);
 
 	    // Guardar las citas en la base de datos
@@ -113,7 +113,6 @@ class SpringDbDogstyleApplicationTests {
 	                System.out.println("  ID de la cita: " + cita.getId());
 	                System.out.println("  Fecha de la cita: " + cita.getFecha());
 	                System.out.println("  Hora de la cita: " + cita.getHora());
-	                System.out.println("  Libre: " + cita.isLibre());
 	                System.out.println("----------");
 	            }
 	        } else {
@@ -179,7 +178,6 @@ class SpringDbDogstyleApplicationTests {
 	        System.out.println("ID de la cita: " + cita.getId());
 	        System.out.println("Fecha de la cita: " + cita.getFecha());
 	        System.out.println("Hora de la cita: " + cita.getHora());
-	        System.out.println("Libre: " + cita.isLibre());
 
 	        // Muestra el usuario asociado a la cita
 	        System.out.println("Usuario asociado - ID: " + cita.getUsuario().getId());
